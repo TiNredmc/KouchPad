@@ -1,0 +1,102 @@
+Key secquences
+1-399       - 1
+401-799     - 2
+801-1199    - 3
+1201-1599   - 4
+1601-1999   - 5
+2001-2399   - 6
+2401-2799   - 7
+2801-3199   - 8
+3201-3599   - 9
+3601-3999   -10
+4001-4399   -11
+4401-4799   -12
+
+====1st col===
+ESC (cx > 1 && cx < 400) && (cy > 3000 && cy < 3900)
+Tab (cx > 1 && cx < 400) && (cy > 2000 && cy < 2900)
+Shift (cx > 1 && cx < 400) && (cy > 900 && cy < 1900) //special key. Shift upper / lower case 
+Ctrl (cx > 1 && cx < 400) && (cy > 1 && cy < 710)
+==============
+
+====2nd col===
+Q (cx > 400 && cx < 800) && (cy > 3000 && cy < 3900)
+A (cx > 400 && cx < 800) && (cy > 2000 && cy < 2900)
+Z (cx > 400 && cx < 800) && (cy > 900 && cy < 1900) 
+Fn (cx > 400 && cx < 800) && (cy > 1 && cy < 710) //special key. use for function 1 to 12
+==============
+
+====3rd col===
+W (cx > 800 && cx < 1200) && (cy > 3000 && cy < 3900)
+S (cx > 800 && cx < 1200) && (cy > 2000 && cy < 2900)
+X (cx > 800 && cx < 1200) && (cy > 900 && cy < 1900)
+Supper (cx > 800 && cx < 1200) && (cy > 1 && cy < 710)//another special key. 
+==============
+
+====4th col===
+E (cx > 1200 && cx < 1600) && (cy > 3000 && cy < 3900)
+D (cx > 1200 && cx < 1600) && (cy > 2000 && cy < 2900)
+C (cx > 1200 && cx < 1600) && (cy > 900 && cy < 1900)
+Alt (cx > 1200 && cx < 1600) && (cy > 1 && cy < 710)//special again.
+==============
+
+====5th col===
+R (cx > 1600 && cx < 2000) && (cy > 3000 && cy < 3900)
+F (cx > 1600 && cx < 2000) && (cy > 2000 && cy < 2900)
+F (cx > 1600 && cx < 2000) && (cy > 900 && cy < 1900)
+Lower (cx > 1600 && cx < 2000) && (cy > 1 && cy < 710) //special again. This one use for the special characters on the 1st row and the bottom left char for some letter (e.g. J has _ (lower) - (riser)
+==============
+
+====6th col===
+T (cx > 2000 & cx < 2400) && (cy > 3000 && cy < 3900)
+G (cx > 2000 & cx < 2400) && (cy > 2000 && cy < 2900) 
+B (cx > 2000 & cx < 2400) && (cy > 900 && cy < 1900)
+// spacebar gone to 'Super Special Key"
+==============
+
+====7th col===
+Y (cx > 2400 && cx < 2800) && (cy > 3000 && cy < 3900)
+H (cx > 2400 && cx < 2800) && (cy > 2000 && cy < 2900)
+N (cx > 2400 && cx < 2800) && (cy > 900 && cy < 1900)
+// spacebar gone to 'Super Special Key"
+ (cx > 2400 && cx < 2800) && (cy > 1 && cy < 710) //special again. This one use for the special characters on the 2st row and the bottom right char for some letter (e.g. J has _ (lower) - (riser)
+==============
+
+====8th col===
+U (cx > 2800 && cx < 3200) && (cy > 3000 && cy < 3900)
+J (cx > 2800 && cx < 3200) && (cy > 2000 && cy < 2900)
+M (cx > 2800 && cx < 3200) && (cy > 900 && cy < 1900)
+Riser (cx > 2800 && cx < 3200) && (cy > 1 && cy < 710) //special again. This one use for the special characters on the 2st row and the bottom right char for some letter (e.g. J has _ (lower) - (riser)
+==============
+
+====9th col===
+I (cx > 3200 && cx < 3600) && (cy > 3000 && cy < 3900) 
+K (cx > 3200 && cx < 3600) && (cy > 2000 && cy < 2900)
+<, (cx > 3200 && cx < 3600) && (cy > 900 && cy < 1900)
+Left Arrow (cx > 3200 && cx < 3600) && (cy > 1 && cy < 710)
+==============
+
+===10th col===
+O (cx > 3600 && cx < 4000) && (cy > 3000 && cy < 3900)
+L (cx > 3600 && cx < 4000) && (cy > 2000 && cy < 2900)
+>. (cx > 3600 && cx < 4000) && (cy > 900 && cy < 1900)
+Down arrow (cx > 3600 && cx < 4000) && (cy > 1 && cy < 710)
+==============
+
+===11th col===
+P (cx > 4000 && cx < 4400) && (cy > 3000 && cy < 3900)
+:; (cx > 4000 && cx < 4400) && (cy > 2000 && cy < 2900)
+?/ (cx > 4000 && cx < 4400) && (cy > 900 && cy < 1900)
+Up arrow (cx > 4000 && cx < 4400) && (cy > 1 && cy < 710)
+==============
+
+===12th col===
+Backspace (cx > 4401 && cx < 4799) && (cy > 1 && cy < 710)
+" ' key (cx > 4401 && cx < 4799) && (cy > 2000 && cy < 2900)
+Enter (cx > 4401 && cx < 4799) && (cy > 900 && cy < 1900)
+Right Arrow (cx > 4401 && cx < 4799) && (cy > 1 && cy < 710)
+==============
+
+=Super Special Key== 
+Spacebar (cx > 2000 && cx < 2400) && (cy > 1 && cy < 710) // 2unit spacebar like ortholinear 
+==============
