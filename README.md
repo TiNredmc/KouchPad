@@ -61,6 +61,7 @@ USB composite library   ->   https://github.com/arpruss/USBComposite_stm32f1
 
 after setting things up. use the KBDortholinaer.png file and resize to the 4.2 by 8.2 centimeter. (Sorry I don't use Imperial unit).I resized in Microsoft Office word. and print it on the sticker paper. after that, Cut the paper (only the kbd layout) the edge less (no black line) side toward the bottom.
 
+![alt_text](https://i.imgur.com/VMUL4QD.jpg)
 
 # Thing that never works 
 more than 1 key rollover is not support due to the hardware (touchpad) limitation. 
