@@ -35,9 +35,9 @@ BOM is here
 
 -some of wires (4 of them, VCC GND DATA CLOCK)
 
--USB CABLE for device projramming / using.
+-USB CABLE for device programming / using the HID.
 
--Yourself 
+-Yourself and tools
 
 ```
 
