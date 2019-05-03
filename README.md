@@ -64,4 +64,4 @@ after setting things up. use the KBDortholinaer.png file and resize to the 4.2 b
 ![alt_text](https://i.imgur.com/VMUL4QD.jpg)
 
 # Thing that never works 
-more than 1 key rollover is not support due to the hardware (touchpad) limitation. 
+more than 1 key rollover is not supported due to the hardware (touchpad) limitation. 
