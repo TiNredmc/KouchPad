@@ -5,7 +5,7 @@ PS2 mouse(6, 5); // mouse pinout (clockT10,dataT11)
 
 #include <USBHID.h>
 int IsShift, IsCtrl, IsAlt, IsFn, IsSup, Isrised, Islowed;
-ip
+
 void mouse_init()
 {
   mouse.write(0xff);  // reset
@@ -84,7 +84,7 @@ void loop() {
     if (cx != 0 && cy != 0 ) {
 
       if (cy > 1 && cy < 710) {
-        if (cx > 1 && cx < 400) {
+        if (cx > 10 && cx < 400) {
           if (IsCtrl == 1) {
             Keyboard.release(KEY_LEFT_CTRL);  // Left Control
             IsCtrl = 0 ;
@@ -100,7 +100,7 @@ void loop() {
             IsFn = 1 ;
           } delay(100);
         }
-        if (cx > 800 && cx < 1000) {
+        if (cx > 800 && cx < 1200) {
           if (IsSup == 1) {
             Keyboard.release(KEY_LEFT_GUI);  // Supper, Windows, Command
             IsSup = 0 ;
@@ -109,7 +109,7 @@ void loop() {
             IsSup = 1 ;
           } delay(100);
         }
-        if (cx > 1000 && cx < 1600) {
+        if (cx > 1200 && cx < 1600) {
           if (IsAlt == 1) {
             Keyboard.release(KEY_LEFT_ALT);  //Alt
             IsAlt = 0 ;
@@ -158,7 +158,7 @@ void loop() {
       }
 
       if (cy > 900 && cy < 1900) {
-        if (cx > 1 && cx < 400) {
+        if (cx > 10 && cx < 400) {
           if (IsShift == 1) {
             Keyboard.release(KEY_LEFT_SHIFT);  //Left Shift
             IsShift = 0 ;
@@ -174,14 +174,14 @@ void loop() {
             Keyboard.write(0x7A);
           } delay(100);
         }
-        if (cx > 800 && cx < 1000) {
+        if (cx > 800 && cx < 1200) {
           if (IsFn == 1) {
             Keyboard.write(KEY_F8); //X and f8
           } else {
             Keyboard.write(0x78);
           } delay(100);
         }
-        if (cx > 1000 && cx < 1600) {
+        if (cx > 1200 && cx < 1600) {
           if (IsFn == 1) {
             Keyboard.write(KEY_F9); //C and f9
           } else {
@@ -245,7 +245,7 @@ void loop() {
       }
 
       if (cy > 2000 && cy < 2900) {
-        if (cx > 1 && cx < 400) {
+        if (cx > 10 && cx < 400) {
           Keyboard.write(KEY_TAB);
           
           delay(100);
@@ -257,14 +257,14 @@ void loop() {
             Keyboard.write(0x61);
           } delay(100);
         }
-        if (cx > 800 && cx < 1000) {
+        if (cx > 800 && cx < 1200) {
           if (IsFn == 1) {
             Keyboard.write(KEY_F2); //S and f2
           } else {
             Keyboard.write(0x73);
           } delay(100);
         }
-        if (cx > 1000 && cx < 1600) {
+        if (cx > 1200 && cx < 1600) {
           if (IsFn == 1) {
             Keyboard.write(KEY_F3); //D and f3
           } else {
@@ -340,7 +340,7 @@ void loop() {
       }
 
       if (cy > 3000 && cy < 3900) {
-        if (cx > 1 && cx < 400) {
+        if (cx > 10 && cx < 400) {
           if (Islowed == 1) {
             Keyboard.write(0x7E);/* ~ */ Islowed = 0; // esc and ` ~
           } else if (Isrised == 1) {
@@ -358,7 +358,7 @@ void loop() {
             Keyboard.write(0x71);
           } delay(100);
         }
-        if (cx > 800 && cx < 1000) {
+        if (cx > 800 && cx < 1200) {
           if (Islowed == 1) {
             Keyboard.write(0x40);/* @ */ Islowed = 0; // W and 2 @
           } else if (Isrised == 1) {
@@ -367,7 +367,7 @@ void loop() {
             Keyboard.write(0x77);
           } delay(100);
         }
-        if (cx > 1000 && cx < 1600) {
+        if (cx > 1200 && cx < 1600) {
           if (Islowed == 1) {
             Keyboard.write(0x23);/* # */ Islowed = 0; // E and 3 #
           } else if (Isrised == 1) {
