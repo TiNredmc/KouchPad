@@ -20,7 +20,8 @@ I want to do a lots of implementations
 - add support for mouse mode and be-able to switch between mouse mode and keyboard mode on the fly
 - make a better enclosure.
 - use LARGER touchpad. for example this one https://www.ebay.com/itm/SYNAPTICS-T1005G-Touch-Pad-Mouse-Pad-Pointing-device/322830232985 
-- after NICE enclosure done. let add some LED (may be WS2812. I had the 4x4 one.)
+- after NICE enclosure done. let add some LED (may be WS2812. I had the 4x4 one.
+- add support to Alps touchpad (WIP).
 ```
 
 # What I need if I wanted too ?
@@ -64,4 +65,11 @@ after setting things up. use the KBDortholinaer.png file and resize to the 4.2 b
 ![alt_text](https://i.imgur.com/VMUL4QD.jpg)
 
 # Thing that never works 
-more than 1 key rollover is not supported due to the hardware (touchpad) limitation. 
+more than 1 key rollover is not supported due to the hardware (touchpad) limitation. /
+
+# WIP implementations 
+
+```
+- Mouse emulation using simple algorithm to make relative mvement on absolute mode.(Code now available)
+- Add support to Alps touchpad
+```
