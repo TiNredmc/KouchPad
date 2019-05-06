@@ -41,7 +41,7 @@ void kbd_init()
   mouse.read();  // ack byte
   mouse.write(0xe8);
   mouse.read();  // ack byte
-  mouse.write(0x01); // x4
+  mouse.write(0x00); // x4
   mouse.read();  // ack byte
   mouse.write(0xf3); // set samplerate 20 (stores mode)
   mouse.read();  // ack byte
@@ -62,17 +62,16 @@ void setup() {
   attachInterrupt(but, interruptFunction, RISING);
   kbd_init();
 }
-  // all importatn variables for us:
-  byte mstat1;
-  byte mstat2;
-  byte mxy;
-  byte mx;
-  byte my;
-  byte mz;
+// all importatn variables for us:
+byte mstat1;
+byte mstat2;
+byte mxy;
+byte mx;
+byte my;
+byte mz;
 
-  unsigned int cx, cy;
+unsigned int cx, cy;
 
-  byte cxp, cyp;
 void kbd_run() {
   if (mz > 85) {
 
@@ -339,7 +338,7 @@ void kbd_run() {
           if (Islowed == 1) {
             Keyboard.write(0x7E);/* ~ */ Islowed = 0; // esc and ` ~
           } else if (Isrised == 1) {
-            Keyboard.write(0x27);/* ` */ Isrised = 0;
+            Keyboard.write(0x60);/* ` */ Isrised = 0;
           } else {
             Keyboard.write(KEY_ESC);
           } delay(100);
@@ -443,26 +442,36 @@ void kbd_run() {
     }
   }
 }
-
+int cxp[4] ;
+int cyp[4] ;
+int count ;
+#define fx(i)  cxp[(count - (i)) & 03]
+#define fy(i)  cyp[(count - (i)) & 03]
+int dx, dy ;
 void mouse_run() {
   if (mz > 100) {
-    if (cx != 0 && cy != 0) {
-      if (cx != cxp || cy != cyp) {
-        Mouse.move(cx - cxp, -(cy - cyp), 0);
-      }
-      cxp = cx;
-      cyp = cy;
+    fx(0) = (((mstat2 & 0x10) << 8) | ((mxy & 0x0F) << 8) | mx ); // 4;  - 1062) * 0.980;
+    fy(0) = (((mstat2 & 0x20) << 7) | ((mxy & 0xF0) << 4) | my ); // 4;  - 820) * 0.980;
+
+    if (count >= 2) {
+      dx = ((fx(0) - fx(1)) / 2 + (fx(1) - fx(2)) / 2) / 8;
+      dy = ((fy(0) - fy(1)) / 2 + (fy(1) - fy(2)) / 2) / 8;
+      Mouse.move(dx, -dy, 0);
     }
+    count++;
+
+  } else {
+    count = 0;
   }
 }
 
 void loop() {
-  mstat1=0;
-  mxy=0;
-  mstat2=0;
-  mx=0;
-  my=0;
-  
+  mstat1 = 0;
+  mxy = 0;
+  mstat2 = 0;
+  mx = 0;
+  my = 0;
+
   mouse.write(0xeb);
   mouse.read();// acknowledgement (0xFA)
 
@@ -486,16 +495,6 @@ void loop() {
 
     kbd_run();
   } else {
-
-    cx = ((((mstat2 & 0x10) << 8) | ((mxy & 0x0F) << 8) | mx ) - 1062) * 0.976;
-    cy = ((((mstat2 & 0x20) << 7) | ((mxy & 0xF0) << 4) | my ) - 820) * 0.976;
-
-    if (cx > 4801) {
-      cx = 0 ;
-    }
-    if (cy > 4086) {
-      cy = 0 ;
-    }
     mouse_run();
   }
 
